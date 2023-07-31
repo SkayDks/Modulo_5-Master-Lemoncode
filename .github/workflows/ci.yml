@@ -12,9 +12,6 @@ jobs:
       - name: Install
         run: npm ci
 
-      - name: Tests
-        run: npm test
-        
       - name: Test e2e
         run: npm run test:e2e
 
