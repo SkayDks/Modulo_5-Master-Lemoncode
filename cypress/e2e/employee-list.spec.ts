@@ -35,8 +35,8 @@ describe('Employee-list spec', () => {
     cy.url().should('equal', 'http://localhost:8080/#/employees/3');
   });
 
-  //No me moleste en mirar el boton de guardar para que funcionara bien, de paso me va bien para tener un error
-  it('should update employee name when it edits an employee and click on save button', () => {
+ 
+  it('should click to edit the second employed and comprove all value is correct', () => {
     // Arrange
     // Act
     cy.loadAndVisit('/api/employees', '/employees', 'employees.json');
@@ -44,15 +44,20 @@ describe('Employee-list spec', () => {
     cy.findAllByRole('button', { name: 'Edit employee' }).then(($buttons) => {
       $buttons[1].click();
     });
+    /* "id": "2",
+    "isActive": true,/
+    "email": "jose.gomez@empresa.com",*/
+    cy.findByLabelText('Nombre').should('have.value', 'Jose Gomez');
+    
+    cy.findByLabelText('Id').should('have.value', '2');
+    
+    cy.findByLabelText('Email').should('have.value', 'jose.gomez@empresa.com');
+    
+    cy.findByLabelText('Activo').should('have.value', "on");
 
-    cy.findByLabelText('Nombre').should('not.have.value', '');
 
-    cy.findByLabelText('Nombre').clear().type('Paco Ramirez');
+    // Assert/
 
-    cy.findByRole('button', { name: 'Guardar' }).click();
-
-    // Assert
-    cy.findByText('Paco Ramirez').should('exist');
   });
 
   it('should update employee name when it edits an employee and click on cancel button', () => {

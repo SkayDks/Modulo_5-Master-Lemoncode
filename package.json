@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "run-p -l type-check:watch start:dev",
+    "start": "run-p -l type-check:watch start:dev start:server",
     "start:dev": "webpack serve --config ./config/webpack/dev.js --open",
+    "start:server": "cd server && npm run mock-server",
     "build": "run-p -l type-check build:prod",
     "build:prod": "npm run clean && webpack --config ./config/webpack/prod.js",
     "analyze": "npm run clean && npm run type-check && webpack --config ./config/webpack/analyze.js",
