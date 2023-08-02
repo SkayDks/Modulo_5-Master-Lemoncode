@@ -1,0 +1,30 @@
+[
+  {
+    "id": "1",
+    "isActive": true,
+    "name": "Daniel Perez",
+    "email": "daniel.perez@empresa.com",
+    "lastDateIncurred": "02/02/2020"
+  },
+  {
+    "id": "2",
+    "isActive": true,
+    "name": "Jose Gomez",
+    "email": "jose.gomez@empresa.com",
+    "lastDateIncurred": "05/02/2020"
+  },
+  {
+    "id": "3",
+    "isActive": false,
+    "name": "Manuel Ruiz",
+    "email": "manuel.ruiz@empresa.com",
+    "lastDateIncurred": "06/02/2020"
+  },
+  {
+    "id": "4",
+    "isActive": true,
+    "name": "Ramón Gomez",
+    "email": "ramon.gomez@empresa.com",
+    "lastDateIncurred": "02/05/2020"
+  }
+]

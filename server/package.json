@@ -1,0 +1,14 @@
+{
+  "name": "employees-api",
+  "version": "1.0.0",
+  "description": "Employees API",
+  "main": "index.js",
+  "scripts": {
+    "mock-server": "json-server --routes ./config/routes.json --watch mock-data/employees.json"
+  },
+  "author": "Tony",
+  "license": "MIT",
+  "devDependencies": {
+    "json-server": "^0.17.1"
+  }
+}

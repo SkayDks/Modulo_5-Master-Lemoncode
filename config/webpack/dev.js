@@ -13,6 +13,11 @@ module.exports = merge(base, {
     host: 'localhost',
     port: 8080,
     hot: true,
+    historyApiFallback: true,
+    proxy: {
+      '/api': 'http://localhost:3000',
+      '/thumbnails': 'http://localhost:3000',
+    },
   },
   module: {
     rules: [
@@ -29,9 +34,9 @@ module.exports = merge(base, {
     ],
   },
   plugins: [
+    new ReactRefreshWebpackPlugin(),
     new Dotenv({
       path: 'dev.env',
     }),
-    new ReactRefreshWebpackPlugin(),
   ],
 });
